@@ -1,14 +1,9 @@
 import React from 'react';
-import useClock from './hooks/useClock';
+import Container from './components/Container';
 
 function App() {
-  const clock = useClock();
   return (
-    <div>
-      Round clock:
-      {' '}
-      {clock}
-    </div>
+    <Container />
   );
 }
 
