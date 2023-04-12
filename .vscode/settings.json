@@ -1,0 +1,39 @@
+{
+  "files.autoSave": "onFocusChange",
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Fira Code SemiBold, Consolas, 'Courier New', monospace",
+  "editor.fontSize": 20,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "eslint.validate": ["javascript", "typescript", "typescriptreact"],
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "html.format.enable": false,
+  "htmlhint.enable": true,
+  "[html]": {
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  "workbench.colorTheme": "Night Owl",
+  "workbench.iconTheme": "vscode-icons",
+  "emmet.triggerExpansionOnTab": true,
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "files.associations": {
+    ".eslintrc": "jsonc",
+    ".eslintignore": "ignore"
+  },
+}
