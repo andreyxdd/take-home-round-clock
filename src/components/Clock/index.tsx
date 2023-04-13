@@ -14,15 +14,16 @@ function Clock() {
   return (
     <div className="container">
       <div className="clock">
-        <div className="circle-halves">
-          <HalfCircle side="top" bottomColor="#49485c" topColor="#282828" />
-          <HalfCircle side="bottom" bottomColor="#49485c" topColor="#282828" />
-        </div>
         {clockNumbers.map((number) => (
           <div className="numbers" key={number}>
             <div>{number}</div>
           </div>
         ))}
+        <div className="dot" />
+        <div className="circle-halves">
+          <HalfCircle side="top" bottomColor="#49485c" topColor="#282828" />
+          <HalfCircle side="bottom" bottomColor="#49485c" topColor="#282828" />
+        </div>
         <Hand type="seconds" date={datetime} />
         <Hand type="minutes" date={datetime} />
         <Hand type="hours" date={datetime} />

@@ -1,6 +1,8 @@
 # Round Clock App
 
-A take home project for a frontend-dev position
+A take home project for a frontend-dev position.
+
+Please note that the app is not compatible with the mobiles devices.
 
 ## Available Scripts
 

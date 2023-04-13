@@ -18,9 +18,8 @@
   border-radius: 50%;
 }
 
-.clock::before{
-  content: '';
-  position: fixed;
+.dot{
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -59,14 +58,14 @@
 }
 
 .numbers div{
-	color: #bdbdcb;
+	color: #ffffff;
 }
 
-@for $n from 2 through 12 { // excluding the last one - 12
+@for $n from 1 through 11 { // excluding the last one - 12
 	.numbers:nth-child(#{$n}){
-		transform: rotate(#{($n - 1)*30deg});
+		transform: rotate(#{$n*30deg});
 	}
 	.numbers:nth-child(#{$n}) div{
-		transform: rotate(-#{($n - 1)*30deg});
+		transform: rotate(-#{$n*30deg});
 	}
 }
