@@ -11,7 +11,7 @@ const useClock = () => {
   React.useEffect(() => {
     const id = setInterval(() => setDate(new Date()), INTERVAL);
     return () => clearInterval(id);
-  });
+  }, []);
 
   return date;
 };

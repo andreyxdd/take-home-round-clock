@@ -14,18 +14,19 @@ function getTimeDegrees(type: HandType, date: Date) {
     case 'seconds':
       return date.getSeconds() * 6;
     case 'minutes':
-      return date.getMinutes() * 6;
+      return date.getMinutes() * 6; // + date.getSeconds() / 2;
     default: // "hours"
-      return date.getHours() * 30;
+      return date.getHours() * 30 + date.getMinutes() / 2;
   }
 }
 
 function Hand({ type, date }: Props) {
   const ref = React.useCallback((node: HTMLDivElement | null) => {
-    if (node !== null) {
+    if (node) {
       node.style.transform = `rotate(${getTimeDegrees(type, date)}deg)`;
     }
   }, [type, date]);
+
   return (
     <div className="hand" ref={ref}>
       <div className={type} />
