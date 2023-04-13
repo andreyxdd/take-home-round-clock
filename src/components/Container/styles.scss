@@ -1,4 +1,5 @@
 @use 'src/styles/_variables.scss' as *;
+
 .container{
   display: flex;
   justify-content: center;
@@ -7,10 +8,165 @@
 }
 
 .clock{
+  width: #{2 * $clockRadius };
+  height: #{2 * $clockRadius };
+  position: relative;
   box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
                 inset 4px 4px 10px rgba(0,0,0,0.5),
                 inset -4px -4px 10px rgba(67,67,67,0.5),
                 4px 4px 10px rgba(0,0,0,0.3);
   border-radius: 50%;
-  margin: 50px auto;
+}
+
+.clock::before{
+  content: '';
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width: #{$clockRadius / 10};
+  height: #{$clockRadius / 10};
+  border-radius: 50%;
+  background-color: red;
+  z-index: 10;
+}
+
+.circle-halves{
+  position: absolute;
+}
+
+.numbers{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	text-align: center;
+	font-size: 2rem;
+	font-weight: 700;
+	padding: 18px;
+}
+
+.numbers:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 5px;
+	height: 15px;
+	background-color: black;
+}
+
+// excluding the last one - 12
+
+.numbers:nth-child(2){
+	transform: rotate(30deg);
+}
+.numbers:nth-child(2) div{
+	transform: rotate(-30deg);
+}
+
+.numbers:nth-child(3){
+	transform: rotate(60deg);
+}
+.numbers:nth-child(3) div{
+	transform: rotate(-60deg);
+}
+
+.numbers:nth-child(4){
+	transform: rotate(90deg);
+}
+.numbers:nth-child(4) div{
+	transform: rotate(-90deg);
+}
+
+.numbers:nth-child(5){
+	transform: rotate(120deg);
+}
+.numbers:nth-child(5) div{
+	transform: rotate(-120deg);
+}
+
+.numbers:nth-child(6){
+	transform: rotate(150deg);
+}
+.numbers:nth-child(6) div{
+	transform: rotate(-150deg);
+}
+
+.numbers:nth-child(7){
+	transform: rotate(180deg);
+}
+.numbers:nth-child(7) div{
+	transform: rotate(-180deg);
+}
+
+.numbers:nth-child(8){
+	transform: rotate(210deg);
+}
+.numbers:nth-child(8) div{
+	transform: rotate(-210deg);
+}
+
+.numbers:nth-child(9){
+	transform: rotate(240deg);
+}
+.numbers:nth-child(9) div{
+	transform: rotate(-240deg);
+}
+
+.numbers:nth-child(10){
+	transform: rotate(270deg);
+}
+.numbers:nth-child(10) div{
+	transform: rotate(-270deg);
+}
+
+.numbers:nth-child(11){
+	transform: rotate(300deg);
+}
+.numbers:nth-child(11) div{
+	transform: rotate(-300deg);
+}
+
+.numbers:nth-child(12){
+	transform: rotate(330deg);
+}
+.numbers:nth-child(12) div{
+	transform: rotate(-330deg);
+}
+
+
+.hand{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.hand div{
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #000;
+}
+
+.sec{
+	height: 40%;
+	width: 1px;
+}
+
+.min{
+	height: 38%;
+	width: 4px;
+	border-radius: 2px;
+}
+
+.hour{
+	height: 28%;
+	width: 8px;
+	border-radius: 4px;
 }
