@@ -1,4 +1,4 @@
-# Recursive Todo List App
+# Round Clock App
 
 A take home project for a frontend-dev position
 
