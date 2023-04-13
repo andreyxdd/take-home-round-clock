@@ -13,22 +13,24 @@
 	bottom: 50%;
 	left: 50%;
 	transform: translateX(-50%);
-	background-color: #000;
 }
 
 .seconds{
-	height: 40%;
-	width: 1px;
+	height: 38%;
+	width: 1.5px;
+  background-color: #ee791a;
 }
 
 .minutes{
-	height: 38%;
+	height: 36%;
 	width: 4px;
 	border-radius: 2px;
+  background-color: #61afff;
 }
 
 .hours{
 	height: 28%;
 	width: 8px;
 	border-radius: 4px;
+  background-color: #61afff;
 }

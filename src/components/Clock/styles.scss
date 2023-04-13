@@ -27,7 +27,7 @@
   width: calc($clockRadius / 10);
   height: calc($clockRadius / 10);
   border-radius: 50%;
-  background-color: red;
+  background-color: #4d4b63;
   z-index: 10;
 }
 
@@ -55,7 +55,11 @@
 	transform: translateX(-50%);
 	width: 5px;
 	height: 15px;
-	background-color: black;
+	background-color: #79f7d8;
+}
+
+.numbers div{
+	color: #bdbdcb;
 }
 
 @for $n from 2 through 12 { // excluding the last one - 12
