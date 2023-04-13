@@ -1,29 +1,19 @@
 import React from 'react';
 
+const INTERVAL = 1000;
+
 /**
- * Hooks to control the position of clock hands, which are represented by div elemnts
+ * Hook to update the datetime state every second
  */
 const useClock = () => {
-  const secondsHandRef = React.useRef<HTMLDivElement | null>(null);
-  const minutesHandRef = React.useRef<HTMLDivElement | null>(null);
-  const hoursHandRef = React.useRef<HTMLDivElement | null>(null);
+  const [date, setDate] = React.useState(new Date());
 
   React.useEffect(() => {
-    const id = setInterval(() => {
-      const date = new Date();
-      const seconds = date.getSeconds() / 60;
-      const minuntes = (date.getMinutes() + seconds) / 60;
-      const hours = (date.getHours() + minuntes) / 12;
-      if (secondsHandRef.current && minutesHandRef.current && hoursHandRef.current) {
-        secondsHandRef.current.style.transform = `rotate(${seconds * 360}deg)`;
-        minutesHandRef.current.style.transform = `rotate(${minuntes * 360}deg)`;
-        hoursHandRef.current.style.transform = `rotate(${hours * 360}deg)`;
-      }
-    }, 1000);
+    const id = setInterval(() => setDate(new Date()), INTERVAL);
     return () => clearInterval(id);
-  }, []);
+  });
 
-  return { secondsHandRef, minutesHandRef, hoursHandRef };
+  return date;
 };
 
 export default useClock;
