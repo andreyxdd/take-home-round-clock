@@ -21,13 +21,13 @@ function Clock() {
             <div>{number}</div>
           </div>
         ))}
-        <div className="hand" id="sec-hand" ref={secondsHandRef}>
-          <div className="sec" />
+        <div className="hand" ref={secondsHandRef}>
+          <div className="second" />
         </div>
-        <div className="hand" id="min-hand" ref={minutesHandRef}>
-          <div className="min" />
+        <div className="hand" ref={minutesHandRef}>
+          <div className="minute" />
         </div>
-        <div className="hand" id="hour-hand" ref={hoursHandRef}>
+        <div className="hand" ref={hoursHandRef}>
           <div className="hour" />
         </div>
       </div>
