@@ -1,12 +1,12 @@
 /* eslint-disable no-param-reassign */
 import React from 'react';
 import './styles.scss';
+import useClock from '../../hooks/useClock';
 
 type HandType = 'seconds' | 'minutes' | 'hours';
 
 type Props = {
   type: HandType;
-  date: Date;
 };
 
 function getTimeDegrees(type: HandType, date: Date) {
@@ -20,12 +20,14 @@ function getTimeDegrees(type: HandType, date: Date) {
   }
 }
 
-function Hand({ type, date }: Props) {
+function Hand({ type }: Props) {
+  const datetime = useClock();
+
   const ref = React.useCallback((node: HTMLDivElement | null) => {
     if (node) {
-      node.style.transform = `rotate(${getTimeDegrees(type, date)}deg)`;
+      node.style.transform = `rotate(${getTimeDegrees(type, datetime)}deg)`;
     }
-  }, [type, date]);
+  }, [type, datetime]);
 
   return (
     <div className="hand" ref={ref}>
